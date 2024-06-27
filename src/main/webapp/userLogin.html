@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("Car_background.jpeg");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .login {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 380px; 
+            height: 500px;
+            background: rgba(0, 0, 0, 0.5); 
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        h1 {
+            font-weight: normal;
+            font-size: 30px;
+            text-shadow: 0px 0px 2px rgba(0,0,0,0.5); 
+            margin-bottom: 60px;
+        }
+        label {
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        input {
+            background: rgba(255,255,255,0.3);
+            height: 40px;
+            line-height: 40px;
+            border-radius: 20px;
+            padding: 0px 20px;
+            border: none;
+            margin-bottom: 15px; 
+            color: white;
+            width: calc(100% - 40px); 
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        input:focus {
+            background: rgba(255,255,255,0.5);
+            transform: scale(1.05);
+        }
+        .button {
+            background: rgb(99, 131, 236);
+            height: 40px;
+            line-height: 40px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 10px;
+            color: white;
+            width: calc(100% - 40px);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center; 
+        }
+        .button:hover {
+            background-color: rgb(79, 111, 206); 
+            transform: scale(1.05);
+        }
+        .button a {
+            text-decoration: none;
+            color: white;
+        }
+        .btt {
+            background: rgb(99, 131, 236);
+            height: 40px;
+            line-height: 40px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 10px;
+            color: white;
+            width: 200px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+            } 
+        .btt:hover {
+            background-color: rgb(79, 111, 206); 
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+   <div class="login">
+        <form action="login" method="POST">
+            <h1><u>YS CAR RENT LOGIN</u></h1>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" class="button" value="Login">
+        </form>
+        Don't have an account? <a href="userRegister.html" class="btt">Register here</a>
+   </div>
+</body>
+</html>

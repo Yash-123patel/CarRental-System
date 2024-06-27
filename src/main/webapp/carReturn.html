@@ -1,0 +1,120 @@
+s<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("CarRentBack.jpg"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(5px); 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            box-sizing: border-box;
+            animation: slide-up 0.5s ease;
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type=text], input[type=number] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type=text]:focus, input[type=number]:focus {
+            border-color: #4CAF50; /* Change border color on focus */
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.jpg" alt="Car Rental Logo" style="width: 100px; height: auto; margin-bottom: 20px;">
+        <h2>Return Car</h2>
+        <form id="returnCarForm" action="returnCar" method="POST" onsubmit="return fun()">
+            <div class="form-group">
+                <label for="carId">Car ID:</label>
+                <input type="text" id="carId" name="carId" required>
+            </div>
+            <div class="form-group">
+                <label for="aadharNo">Registered Aadhar Number:</label>
+                <input type="number" id="aadharNo" name="aadharNo" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Return Car">
+            </div>
+        </form>
+    </div>
+    <script>
+        function fun() {
+            let aAdhar = document.getElementById("aadharNo");
+            if (aAdhar.value.trim().length != 12) {
+                alert("Invalid Aadhar No");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("CarRentBack.jpg");
+    background-size: cover;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.payment-option:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.payment-option img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+label {
+    font-size: 18px;
+    color: #555;
+    cursor: pointer;
+    flex: 1;
+}
+
+input[type="submit"] {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none; 
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    transform: translateY(-3px);
+}
+
+input[type="submit"]:focus {
+    outline: none; 
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    label {
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+     <img src="logo.jpg" alt="Car Rental Logo" style="width: 100px; height: auto; margin-bottom: 20px;">
+        <h2>Payment Options</h2>
+        <form id="paymentForm" action="process_payment" method="POST">
+            <div class="payment-option creditCard">
+                <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" required>
+                <img src="credit.jpg" alt="Credit Card">
+                <label for="creditCard">Credit Card</label>
+            </div>
+            <div class="payment-option debitCard">
+                <input type="radio" id="debitCard" name="paymentMethod" value="debitCard">
+                <img src="debit.jpg" alt="Debit Card">
+                <label for="debitCard">Debit Card</label>
+            </div>
+            <div class="payment-option upi">
+                <input type="radio" id="upi" name="paymentMethod" value="upi">
+                <img src="qr.jpg" alt="UPI QR Code">
+                <label for="upi">UPI QR Code</label>
+            </div>
+            <div class="payment-option netBanking">
+                <input type="radio" id="netBanking" name="paymentMethod" value="netBanking">
+                <img src="net.jpg" alt="Net Banking">
+                <label for="netBanking">Net Banking</label>
+            </div>
+            <input type="submit" value="Proceed to Payment">
+        </form>
+    </div>
+</body>
+</html>

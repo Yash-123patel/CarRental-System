@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url("CarRentBack.jpg") no-repeat center center fixed;
+            background-size: cover;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 213, 128, 0.8);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .container h1 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            width: 160px;
+            height: 45px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background: linear-gradient(45deg, #00C6FF, #0072FF);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            line-height: 45px;
+            text-align: center;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            background: linear-gradient(45deg, #0072FF, #00C6FF);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .button:active {
+            transform: translateY(0) scale(1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.jpg" alt="Car Rental Logo" style="width: 100px; height: auto; margin-bottom: 20px;">
+        <h1>Welcome to YS Car Rental Service</h1>
+        <a href="giveLocation.html" class="button">Rent A Car</a>
+        <a href="carReturn.html" class="button">Return Car</a>
+        <a href="showCar.html" class="button">Show My Rented Car</a><br>
+        <a href="logout.html" class="button">Logout</a>
+        <a href="homePage.html" class="button">Home</a>
+    </div>
+</body>
+</html>

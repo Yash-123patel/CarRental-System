@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Cars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("available.webp");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .car {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgba(250, 250, 250, 0.8);
+            transition: transform 0.3s;
+        }
+        .car:hover {
+            transform: scale(1.05);
+        }
+        .car img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        .car:hover img {
+            transform: scale(1.1);
+        }
+        .car-info {
+            text-align: center;
+        }
+        .car-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .car-charge {
+            font-size: 18px;
+            color: #007BFF;
+        }
+        .car-charge span {
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .input-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .input-group label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .input-group input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.jpg" alt="Car Rental Logo" style="width: 100px; height: auto; margin-bottom: 20px;">
+        <h1>Available Cars</h1>
+        <div class="car-grid">
+            <div class="car">
+                <img src="swift.jpg" alt="Car Image 1">
+                <div class="car-info">
+                    <div class="car-name">Swift&nbsp;- C001</div>
+                    <div class="car-charge">Per Day: 1000</div>
+                </div>
+            </div>
+            <div class="car">
+                <img src="innova.jpg" alt="Car Image 2">
+                <div class="car-info">
+                    <div class="car-name">Innova&nbsp;- C002</div>
+                    <div class="car-charge">Per Day: 2000</div>
+                </div>
+            </div>
+            <div class="car">
+                <img src="hond.jpg" alt="Car Image 3">
+                <div class="car-info">
+                    <div class="car-name">Honda City&nbsp;- C003</div>
+                    <div class="car-charge">Per Day: 2500</div>
+                </div>
+            </div>
+            <div class="car">
+                <img src="scorpio.jpg" alt="Car Image 4">
+                <div class="car-info">
+                    <div class="car-name">Scorpio&nbsp;- C004</div>
+                    <div class="car-charge">Per Day: 1700</div>
+                </div>
+            </div>
+            <div class="car">
+                <img src="wagonr.jpg" alt="Car Image 4">
+                <div class="car-info">
+                    <div class="car-name">Wagonr&nbsp;- C005</div>
+                    <div class="car-charge">Per Day: 1200</div>
+                </div>
+            </div>
+            <div class="car">
+                <img src="verna.jpg" alt="Car Image 4">
+                <div class="car-info">
+                    <div class="car-name">Verna&nbsp;- C006</div>
+                    <div class="car-charge">Per Day:1800 </div>
+                </div>
+            </div>
+            <div class="car">
+                <img src="Xuv.jpg" alt="Car Image 4">
+                <div class="car-info">
+                    <div class="car-name">XUV&nbsp;- C007</div>
+                    <div class="car-charge">Per Day:1500 </div>
+                </div>
+            </div>
+            <div class="car">
+                <img src="vitara.jpg" alt="Car Image 4">
+                <div class="car-info">
+                    <div class="car-name">Vitara&nbsp;- C008</div>
+                    <div class="car-charge">Per Day:1800 </div>
+                </div>
+            </div>
+            <div class="car">
+                <img src="Tavera.jpg" alt="Car Image 4">
+                <div class="car-info">
+                    <div class="car-name">Tavera&nbsp;- C009</div>
+                    <div class="car-charge">Per Day:1800 </div>
+                </div>
+            </div>
+        </div>
+       <form action="carmatch" method="POST">
+        <div class="input-group">
+            <label for="car-id">Enter Car ID:</label>
+            <input type="text" id="car-id" name="car-id">
+            <input type="submit" class="submit-button" value="Continue">
+        </div>
+       </form>
+    </div>
+</body>
+</html>
